@@ -10,7 +10,5 @@ ENV TERM xterm
 WORKDIR     /home/toolbox/
 RUN         curl -L -o /tmp/docker-latest.tgz https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSION}.tgz && \
             tar -xvzf /tmp/docker-latest.tgz && \
-            mv docker/* /usr/bin/ && \
-            apt-get clean && \
-            rm -rf /var/lib/apt/lists/*  /tmp/* /var/tmp/*
+            mv docker/* /usr/bin/ 
 
