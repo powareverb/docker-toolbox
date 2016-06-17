@@ -3,7 +3,7 @@ MAINTAINER Gavin Jones <gjones@powerfarming.co.nz>
 ENV         DOCKER_VERSION 1.11.0
 
 RUN apt-get update && \
-    apt-get install -y git subversion nano wget curl ping dnsutils 
+    apt-get install -y git subversion nano wget curl iputils-ping dnsutils 
 ENV TERM xterm
 
 #Docker bins
