@@ -5,6 +5,7 @@ ENV         DOCKER_VERSION 1.11.0
 RUN apt-get update && \
     apt-get install -y git subversion nano wget curl iputils-ping dnsutils 
 ENV TERM xterm
+ENV TAG dev
 
 #Docker bins
 WORKDIR     /home/toolbox/
