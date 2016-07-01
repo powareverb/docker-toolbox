@@ -13,3 +13,4 @@ RUN         curl -L -o /tmp/docker-latest.tgz https://get.docker.com/builds/Linu
             tar -xvzf /tmp/docker-latest.tgz && \
             mv docker/* /usr/bin/ 
 
+RUN echo $TAG >> build_tag
