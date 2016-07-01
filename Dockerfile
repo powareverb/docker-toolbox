@@ -1,11 +1,13 @@
 FROM ubuntu
 MAINTAINER Gavin Jones <gjones@powerfarming.co.nz>
-ENV         DOCKER_VERSION 1.11.0
+ENV DOCKER_VERSION 1.11.0
+ENV TERM xterm
+#To override if needed
+ARG TAG=dev
+ENV TAG ${TAG}
 
 RUN apt-get update && \
     apt-get install -y git subversion nano wget curl iputils-ping dnsutils 
-ENV TERM xterm
-ENV TAG dev
 
 #Docker bins
 WORKDIR     /home/toolbox/
