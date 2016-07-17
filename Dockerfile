@@ -7,7 +7,7 @@ ARG TAG=dev
 ENV TAG ${TAG}
 
 RUN apt-get update && \
-    apt-get install -y git subversion nano wget curl iputils-ping dnsutils 
+    apt-get install -y git subversion nano wget curl iputils-ping dnsutils cifs-utils
 
 #Docker bins
 WORKDIR     /home/toolbox/
