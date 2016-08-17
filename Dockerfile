@@ -25,5 +25,8 @@ RUN 		curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-c
 RUN			curl -L https://github.com/docker/machine/releases/download/v${DOCKER_MACHINE_VERSION}/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine && \
 			chmod +x /usr/local/bin/docker-machine
 	
+#Minio tools
+RUN			curl -L https://dl.minio.io/server/minio/release/linux-amd64/minio > /usr/local/bin/minio && \
+chmod +x /usr/local/bin/minio
 
 RUN echo $TAG >> build_tag
