@@ -32,6 +32,6 @@ RUN			curl -L https://dl.minio.io/client/mc/release/linux-amd64/mc > /usr/local/
 chmod +x /usr/local/bin/mc
 
 #Python-pip
-RUN apt-get install -y python-pip
+RUN apt-get install -y python-pip 
 
 RUN echo $TAG >> build_tag
