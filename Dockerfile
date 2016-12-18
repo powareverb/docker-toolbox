@@ -1,12 +1,13 @@
-FROM ubuntu:xenial
-MAINTAINER Gavin Jones <gjones@powerfarming.co.nz>
-ENV DOCKER_VERSION 1.11.0
-ENV DOCKER_COMPOSE_VERSION 1.8.0
-ENV DOCKER_MACHINE_VERSION 0.7.0
-ENV TERM xterm
+FROM 			ubuntu:xenial
+MAINTAINER 		Gavin Jones <gjones@powerfarming.co.nz>
+ENV 			DOCKER_VERSION 1.12.0
+ENV 			DOCKER_COMPOSE_VERSION 1.8.0
+ENV 			DOCKER_MACHINE_VERSION 0.7.0
+ENV 			TERM xterm
 #To override if needed
-ARG TAG=dev
-ENV TAG ${TAG}
+ARG 			TAG=dev
+ENV 			POWERSHELL_DOWNLOAD_URL https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-alpha.13/powershell_6.0.0-alpha.13-1ubuntu1.16.04.1_amd64.deb
+ENV 			TAG ${TAG}
 
 RUN 			apt-get update  \
 				&& apt-get install -y git subversion nano wget curl iputils-ping dnsutils  \
@@ -48,7 +49,6 @@ RUN 			apt-get update \
 WORKDIR 		/powershell
 
 ### Set some environment variables
-ENV 			POWERSHELL_DOWNLOAD_URL https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-alpha.9/powershell_6.0.0-alpha.9-1ubuntu1.16.04.1_amd64.deb
 RUN 			curl -SL $POWERSHELL_DOWNLOAD_URL --output powershell.deb \
 				&& apt-get install libunwind8 libicu55 \
 				&& dpkg --install powershell.deb \
